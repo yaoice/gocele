@@ -1,0 +1,25 @@
+[server]
+port = 9094
+host = "0.0.0.0"
+
+[mysql]
+host = "127.0.0.1"
+database = "gocele"
+user = "root"
+password = "123abc"
+
+[gin]
+mode = "debug"
+
+[log]
+level = "ERROR"
+
+[dozer]
+broker = "redis://127.0.0.1:6379"
+result_backend = "redis://127.0.0.1:6379"
+results_expire_in = 3600000
+exchange = "machinery_exchange"
+exchange_type ="direct"
+default_queue ="machinery_tasks"
+binding_key ="machinery_key"
+
