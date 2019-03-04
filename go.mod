@@ -1,7 +1,7 @@
 module github.com/yaoice/gocele
 
 require (
-	github.com/BurntSushi/toml v0.3.1 // indirect
+	github.com/RichardKnop/machinery v1.5.7
 	github.com/appleboy/gin-jwt v2.5.0+incompatible
 	github.com/appleboy/gofight v2.0.0+incompatible // indirect
 	github.com/buger/jsonparser v0.0.0-20181115193947-bf1c66bbce23 // indirect
@@ -17,7 +17,6 @@ require (
 	github.com/swaggo/gin-swagger v1.1.0
 	github.com/tidwall/gjson v1.2.1 // indirect
 	github.com/tidwall/match v1.0.1 // indirect
-	github.com/tidwall/pretty v0.0.0-20180105212114-65a9db5fad51 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasttemplate v0.0.0-20170224212429-dcecefd839c4 // indirect
 	gopkg.in/appleboy/gofight.v2 v2.0.0 // indirect
