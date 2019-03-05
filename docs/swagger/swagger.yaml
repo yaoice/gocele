@@ -1,0 +1,75 @@
+basePath: /apis/v1
+host: 127.0.0.1:9094
+info:
+  contact:
+    email: yao3690093@gmail.com
+    name: iceyao
+    url: https://www.iceyao.com.cn
+  description: This is a gocele server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Swagger gocele
+  version: "1.0"
+paths:
+  /add:
+    post:
+      description: Add测试
+      parameters:
+      - description: The numbers
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      responses:
+        "200":
+          description: ' OK'
+          schema:
+            type: string
+        "500":
+          description: ' Internal Server Error'
+          schema:
+            type: string
+      summary: Add
+  /mul:
+    post:
+      description: Mul测试
+      parameters:
+      - description: The numbers
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      responses:
+        "200":
+          description: ' OK'
+          schema:
+            type: string
+        "500":
+          description: ' Internal Server Error'
+          schema:
+            type: string
+      summary: Mul
+  /tasks:
+    post:
+      description: Tasks测试
+      parameters:
+      - description: The uuid
+        in: body
+        name: body
+        required: true
+        schema:
+          type: object
+      responses:
+        "200":
+          description: ' OK'
+          schema:
+            type: string
+        "500":
+          description: ' Internal Server Error'
+          schema:
+            type: string
+      summary: Tasks
+swagger: "2.0"

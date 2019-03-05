@@ -39,12 +39,13 @@ type uuid struct {
 
 func NewCalController() *calController {
 	once.Do(func() {
-		broker := config.GetString("dozer.broker")
-		resultBackend := config.GetString("dozer.result_backend")
-		exchange := config.GetString("dozer.exchange")
-		exchangeType := config.GetString("dozer.exchange_type")
-		defaultQueue := config.GetString("dozer.default_queue")
-		bindingKey := config.GetString("dozer.binding_key")
+		prefix := "machinery"
+		broker := config.GetString(prefix + ".broker")
+		resultBackend := config.GetString(prefix + ".result_backend")
+		exchange := config.GetString(prefix + ".exchange")
+		exchangeType := config.GetString(prefix + ".exchange_type")
+		defaultQueue := config.GetString(prefix + ".default_queue")
+		bindingKey := config.GetString(prefix + ".binding_key")
 
 		cnf := mconfig.Config{
 			Broker:        broker,
@@ -69,6 +70,12 @@ func NewCalController() *calController {
 	return calC
 }
 
+// @Summary Add
+// @Description Add测试
+// @Param   body   body    numbers  true     "The numbers"
+// @Success 200 {string} json "" OK
+// @Failure 500 {string} json "" Internal Server Error
+// @router /add [post]
 func (this *calController) Add(c *gin.Context) {
 	var message interface{}
 	nums := numbers{}
@@ -99,7 +106,7 @@ func (this *calController) Add(c *gin.Context) {
 	result, err := asyncResult.GetWithTimeout(5000000000, 1)
 	if err != nil { // Handle errors reading the config file
 		taskState := asyncResult.GetState()
-		c.String(http.StatusOK, "Defered! %s", taskState.TaskUUID)
+		c.String(http.StatusInternalServerError, "Defered! %s", taskState.TaskUUID)
 		return
 	}
 	for _, r := range result {
@@ -108,6 +115,12 @@ func (this *calController) Add(c *gin.Context) {
 	c.String(http.StatusOK, "Result: %v", message)
 }
 
+// @Summary Mul
+// @Description Mul测试
+// @Param   body   body    numbers  true     "The numbers"
+// @Success 200 {string} json "" OK
+// @Failure 500 {string} json "" Internal Server Error
+// @router /mul [post]
 func (this *calController) Mul(c *gin.Context) {
 	var message interface{}
 	nums := numbers{}
@@ -138,7 +151,7 @@ func (this *calController) Mul(c *gin.Context) {
 	result, err := asyncResult.GetWithTimeout(5000000000, 1)
 	if err != nil { // Handle errors reading the config file
 		taskState := asyncResult.GetState()
-		c.String(http.StatusOK, "Defered! %s", taskState.TaskUUID)
+		c.String(http.StatusInternalServerError, "Defered! %s", taskState.TaskUUID)
 		return
 	}
 	for _, r := range result {
@@ -147,6 +160,12 @@ func (this *calController) Mul(c *gin.Context) {
 	c.String(http.StatusOK, "Result: %v", message)
 }
 
+// @Summary Tasks
+// @Description Tasks测试
+// @Param   body   body    uuid  true     "The uuid"
+// @Success 200 {string} json "" OK
+// @Failure 500 {string} json "" Internal Server Error
+// @router /tasks [post]
 func (this *calController) GetTask(c *gin.Context) {
 	var message interface{}
 	u := uuid{}

@@ -11,4 +11,6 @@ const (
 	FLAG_KEY_MYSQL_PASSWORD     = "mysql.password"
 	FLAG_KEY_GIN_MODE           = "gin.mode"
 	FLAG_KEY_LOG_LEVEL          = "log.level"
+	FLAG_KEY_CLIENT_USERNAME    = "client.username"
+	FLAG_KEY_CLIENT_PASSWORD    = "client.password"
 )
