@@ -2,6 +2,7 @@ module github.com/yaoice/gocele
 
 require (
 	github.com/RichardKnop/machinery v1.5.7
+	github.com/XiaoMi/naftis v0.0.0-20190110141906-1927dbb16f72 // indirect
 	github.com/alecthomas/template v0.0.0-20160405071501-a0175ee3bccc
 	github.com/appleboy/gin-jwt v2.5.0+incompatible
 	github.com/appleboy/gofight v2.0.0+incompatible // indirect

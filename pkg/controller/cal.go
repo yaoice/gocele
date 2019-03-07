@@ -30,7 +30,7 @@ type calController struct {
 }
 
 type numbers struct {
-	Numbers string `json:"numbers" form:"numbers" query:"numbers"`
+	Numbers string `json:"numbers" form:"numbers" query:"numbers" binding:"required,gte=0,lte=5"`
 }
 
 type uuid struct {
@@ -82,6 +82,7 @@ func (this *calController) Add(c *gin.Context) {
 	//var args []signatures.TaskArg
 
 	if err := c.Bind(&nums); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
@@ -127,6 +128,7 @@ func (this *calController) Mul(c *gin.Context) {
 	//var args []signatures.TaskArg
 
 	if err := c.Bind(&nums); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
@@ -171,6 +173,7 @@ func (this *calController) GetTask(c *gin.Context) {
 	u := uuid{}
 
 	if err := c.Bind(&u); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
