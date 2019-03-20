@@ -1,8 +1,8 @@
 package log
 
 import (
-	"github.com/yaoice/gocele/pkg/config"
 	log "github.com/sirupsen/logrus"
+	"github.com/yaoice/gocele/pkg/config"
 	"os"
 	"runtime"
 )
@@ -190,6 +190,3 @@ func Fatalf(format string, args ...interface{}) {
 	}
 	log.WithFields(fields).Fatalf(format, args...)
 }
-
-
-

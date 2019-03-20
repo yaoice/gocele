@@ -9,9 +9,9 @@ import (
 )
 
 type flagOpt struct {
-	optName string
+	optName         string
 	optDefaultValue interface{}
-	optUsage  string
+	optUsage        string
 }
 
 var c Config
@@ -77,5 +77,3 @@ func GetBool(key string) bool {
 func GetConfig() *Config {
 	return &c
 }
-
-

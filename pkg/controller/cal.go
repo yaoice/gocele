@@ -13,8 +13,8 @@ import (
 )
 
 var (
-	once   sync.Once
-	calC   *calController
+	once sync.Once
+	calC *calController
 )
 
 type CalInterface interface {
@@ -196,12 +196,12 @@ func (this *calController) GetTask(c *gin.Context) {
 	}
 
 	if taskState.State == "STARTED" {
-		c.String(http.StatusOK, "Status: %s",tasks.StateStarted)
+		c.String(http.StatusOK, "Status: %s", tasks.StateStarted)
 		return
 	}
 
 	if taskState.State == "FAILURE" {
-		c.String(http.StatusOK, "Status: ",tasks.StateFailure)
+		c.String(http.StatusOK, "Status: ", tasks.StateFailure)
 		return
 	}
 

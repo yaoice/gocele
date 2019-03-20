@@ -1,9 +1,9 @@
 package config
 
 type Config struct {
-	Mysql            *Mysql
-	Gin              *Gin
-	Log              *Log
+	Mysql *Mysql
+	Gin   *Gin
+	Log   *Log
 }
 
 type Mysql struct {
@@ -20,5 +20,3 @@ type Gin struct {
 type Log struct {
 	Level string
 }
-
-

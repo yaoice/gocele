@@ -298,10 +298,10 @@ func init() {
 	lookupFlags.String("uuid", "", "uuid of task you want to lookup.")
 	viper.BindPFlag("uuid", lookupFlags.Lookup("uuid"))
 
-	mulFlags.StringVar(&mnumbers, "i", "","integers to multiply")
+	mulFlags.StringVar(&mnumbers, "i", "", "integers to multiply")
 	viper.BindPFlag("i", mulFlags.Lookup("i"))
 
-	addFlags.StringVar(&anumbers,"i", "", "integers to add")
+	addFlags.StringVar(&anumbers, "i", "", "integers to add")
 	viper.BindPFlag("i", addFlags.Lookup("i"))
 }
 

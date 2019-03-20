@@ -11,8 +11,8 @@ import (
 
 var (
 	authMiddleware *jwt.GinJWTMiddleware
-	err error
-	once sync.Once
+	err            error
+	once           sync.Once
 )
 
 type login struct {
